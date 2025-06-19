@@ -24,3 +24,65 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+@keyframes stardust {
+  0% {
+    background-position: 0 0, 25px 25px;
+  }
+  50% {
+    background-position: 50px 50px, 75px 75px;
+  }
+  100% {
+    background-position: 0 0, 25px 25px;
+  }
+}
+
+.bg-stardust {
+  background-color: #0f0f1a;
+  background-image: 
+    radial-gradient(white 0.5px, transparent 0.5px),
+    radial-gradient(white 0.5px, transparent 0.5px);
+  background-size: 100px 100px, 150px 150px;
+  background-position: 0 0, 25px 25px;
+  animation: stardust 20s linear infinite;
+  position: relative; /* required for animation/z-index to work */
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -100% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.bg-glassy-shimmer {
+  position: relative;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0.05) 0%,
+    rgba(255, 255, 255, 0.15) 50%,
+    rgba(255, 255, 255, 0.05) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 4s linear infinite;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  z-index: 1;
+}
+
+@keyframes aurora {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.bg-aurora {
+  background: linear-gradient(-45deg, #24000d, #540014, #013516, #043718, #2b165f, #00253e, #001b43);
+  background-size: 400% 400%;
+  animation: aurora 15s ease infinite;
+}
+
+
+
