@@ -5,14 +5,7 @@ import dbConnect from "@/lib/mongoose";
 import Application from "@/models/Application";
 import Student from "@/models/Student";
 
-// ✅ Define params interface to satisfy Next.js App Router
-interface Context {
-  params: {
-    id: string;
-  };
-}
-
-export async function PUT(req: NextRequest, context: Context) {
+export async function PUT(req: NextRequest, context: { params: { id: string } }) {
   try {
     const session = await getServerSession(authOptions);
     if (!session || session.user.role !== "student" || !session.user.email) {
