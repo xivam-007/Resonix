@@ -1,11 +1,11 @@
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 import dbConnect from "@/lib/mongoose";
 import Application from "@/models/Application";
 import Student from "@/models/Student";
 
-export async function PUT(req: Request, context: { params: { id: string } }) {
+export async function PUT(req: NextRequest, { params }: { params: { id: string } }) {
   try {
     const session = await getServerSession(authOptions);
     if (!session || session.user.role !== "student" || !session.user.email) {
@@ -19,7 +19,6 @@ export async function PUT(req: Request, context: { params: { id: string } }) {
       return NextResponse.json({ message: "Student not found" }, { status: 404 });
     }
 
-    const { params } = context;
     const applicationId = params.id;
 
     let data;
