@@ -1,7 +1,7 @@
 // src/app/api/jobs/post/route.ts
 import { NextResponse } from "next/server";
 import Job from "@/models/Job";
-import { authOptions } from "@/app/api/auth/[...nextauth]/route";
+import { authOptions } from "@/lib/authOptions";
 import { getServerSession } from "next-auth";
 
 export async function POST(req: Request) {
