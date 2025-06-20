@@ -1,15 +1,14 @@
 // src/app/api/jobs/recruiter/[recruiterId]/route.ts
-// This lists all the jobs posted by a specific recruiter.
 import { NextResponse } from 'next/server';
 import connectToDatabase from '@/lib/mongoose';
 import Job from '@/models/Job';
 import mongoose from 'mongoose';
 
-export async function GET(req: Request, { params }: { params: { recruiterId: string } }) {
+export async function GET(req: Request, context: any) {
+  const { recruiterId } = context.params;
+
   try {
     await connectToDatabase();
-
-    const { recruiterId } = params;
 
     if (!mongoose.Types.ObjectId.isValid(recruiterId)) {
       return NextResponse.json({ error: 'Invalid recruiter ID' }, { status: 400 });
