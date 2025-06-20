@@ -3,13 +3,7 @@ import connectDB from '@/lib/mongoose';
 import Application from '@/models/Application';
 import Student from '@/models/Student';
 
-interface Params {
-  params: {
-    jobId: string;
-  };
-}
-
-export async function GET(req: NextRequest, { params }: Params) {
+export async function GET(req: NextRequest, { params }: { params: { jobId: string } }) {
   const { jobId } = params;
   await connectDB();
 
