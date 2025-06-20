@@ -5,7 +5,7 @@ import dbConnect from "@/lib/mongoose";
 import Application from "@/models/Application";
 import Student from "@/models/Student";
 
-export async function PUT(req: NextRequest, context: { params: { id: string } }) {
+export async function PUT(req: NextRequest) {
   try {
     const session = await getServerSession(authOptions);
     if (!session || session.user.role !== "student" || !session.user.email) {
@@ -19,7 +19,10 @@ export async function PUT(req: NextRequest, context: { params: { id: string } })
       return NextResponse.json({ message: "Student not found" }, { status: 404 });
     }
 
-    const applicationId = context.params.id;
+    // ✅ Get application ID from request URL
+    const url = new URL(req.url);
+    const pathParts = url.pathname.split("/");
+    const applicationId = pathParts[pathParts.length - 1];
 
     let data;
     try {
