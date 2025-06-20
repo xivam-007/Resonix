@@ -2,10 +2,14 @@ import { NextRequest, NextResponse } from 'next/server';
 import dbConnect from '@/lib/mongoose';
 import Application from '@/models/Application';
 
-export async function PUT(req: NextRequest, { params }: { params: { id: string } }) {
+export async function PUT(req: NextRequest) {
   await dbConnect();
 
-  const { id } = params;
+  // ✅ Extract the application ID from the URL
+  const url = new URL(req.url);
+  const pathParts = url.pathname.split('/');
+  const id = pathParts[pathParts.length - 2]; // "status" is the last part
+
   const { status } = await req.json();
 
   try {
