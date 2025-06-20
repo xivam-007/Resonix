@@ -1,10 +1,16 @@
 import { NextRequest, NextResponse } from 'next/server';
 import connectDB from '@/lib/mongoose';
 import Application from '@/models/Application';
-import Student from '@/models/Student'; // ✅ Make sure you have this model
+import Student from '@/models/Student';
 
-export async function GET(req: NextRequest, context: { params: { jobId: string } }) {
-  const { jobId } = context.params;
+interface Params {
+  params: {
+    jobId: string;
+  };
+}
+
+export async function GET(req: NextRequest, { params }: Params) {
+  const { jobId } = params;
   await connectDB();
 
   try {
@@ -15,7 +21,6 @@ export async function GET(req: NextRequest, context: { params: { jobId: string }
         select: '_id name email',
       });
 
-    // Format the response
     const formatted = applications.map((app: any) => ({
       _id: app._id,
       jobId: app.jobId,
