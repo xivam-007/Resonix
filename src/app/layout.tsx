@@ -8,6 +8,8 @@ import SessionWrapper from "@/components/SessionWrapper";
 const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
 const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
 
+
+
 export const metadata: Metadata = {
   title: "Resonix",
   description: "Your smart job platform",
@@ -20,9 +22,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased bg-black text-white`}>
         <SessionWrapper>
-          <Navbar />
+            <Navbar/>
           {children}
         </SessionWrapper>
       </body>
