@@ -5,7 +5,14 @@ import dbConnect from "@/lib/mongoose";
 import Application from "@/models/Application";
 import Student from "@/models/Student";
 
-export async function PUT(req: NextRequest, { params }: { params: { id: string } }) {
+// ✅ Define params interface to satisfy Next.js App Router
+interface Context {
+  params: {
+    id: string;
+  };
+}
+
+export async function PUT(req: NextRequest, context: Context) {
   try {
     const session = await getServerSession(authOptions);
     if (!session || session.user.role !== "student" || !session.user.email) {
@@ -19,7 +26,7 @@ export async function PUT(req: NextRequest, { params }: { params: { id: string }
       return NextResponse.json({ message: "Student not found" }, { status: 404 });
     }
 
-    const applicationId = params.id;
+    const applicationId = context.params.id;
 
     let data;
     try {
