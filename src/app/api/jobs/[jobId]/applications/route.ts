@@ -3,11 +3,12 @@ import connectDB from '@/lib/mongoose';
 import Application from '@/models/Application';
 import Student from '@/models/Student'; // ✅ Make sure you have this model
 
-export async function GET(req: NextRequest, { params }: { params: { jobId: string } }) {
+export async function GET(req: NextRequest, context: { params: { jobId: string } }) {
+  const { jobId } = context.params;
   await connectDB();
 
   try {
-    const applications = await Application.find({ jobId: params.jobId })
+    const applications = await Application.find({ jobId })
       .populate({
         path: 'studentId',
         model: 'Student',
