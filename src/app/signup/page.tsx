@@ -42,7 +42,7 @@ const SignupPage = () => {
           duration: 0.8,
           ease: "easeInOut",
         }}
-        className="mt-8 bg-gradient-to-br from-slate-300 to-slate-500 py-4 bg-clip-text text-center text-xl font-medium tracking-tight text-transparent md:text-4xl"
+        className="mt-8 bg-gradient-to-br from-slate-300 to-red-500 py-4 bg-clip-text text-center text-xl font-medium tracking-tight text-transparent md:text-4xl"
       >
         Your journey starts here.  <br /> Sign in to explore and connect.
       </motion.h1>
