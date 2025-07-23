@@ -1,36 +1,56 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🚀 Resonix — AI-Powered Job Platform
 
-## Getting Started
+Resonix is a full-stack web application that connects **recruiters** with **skilled students** through a smart, AI-powered job-matching system.  
+Recruiters can post jobs, view applicants, and use AI to **rank resumes** based on custom keywords or skill phrases.  
+Students can apply for jobs, upload resumes, and boost their chances by showcasing their skills.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## ✨ Features
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 👩‍💼 For Recruiters
+- 🔍 **Post Job Listings**
+- 📂 **View Applicants** for each job
+- 🤖 **AI Resume Sorting** using keyword matching
+- ✅ **Accept/Reject Applications**
+- 📄 **Request Resume Access** with student approval
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 🧑‍🎓 For Students
+- 📝 **Apply for Jobs**
+- 📤 **Upload Resume** securely via Cloudinary
+- 🧠 **Build Your Profile** with skills and bio
+- 🚀 **Stand Out** with project showcases
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## 🛠️ Tech Stack
 
-To learn more about Next.js, take a look at the following resources:
+| Layer         | Technologies Used                              |
+|---------------|-------------------------------------------------|
+| **Frontend**  | Next.js, TypeScript, Tailwind CSS              |
+| **Backend**   | Node.js, Express, FastAPI (AI resume sorting)  |
+| **Database**  | MongoDB with Mongoose                          |
+| **Authentication** | NextAuth.js (Credentials Provider)       |
+| **File Storage** | Cloudinary                                  |
+| **AI Integration** | Gemini API                                |
+| **Deployment** | Vercel (frontend), Render (FastAPI backend)   |
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🧠 AI Resume Ranking
 
-## Deploy on Vercel
+Recruiters can input custom keywords like:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🙌 Acknowledgements
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- [Next.js](https://nextjs.org/)
+- [GeminiAI](https://ai.google.dev/)
+- [MongoDB](https://www.mongodb.com/)
+- [Cloudinary](https://cloudinary.com/)
+- [Render](https://render.com/)
+- [ReactBits](https://www.reactbits.dev/)
+
+## 📸 Screenshots
+
+```text
+"React, MongoDB, DSA, REST APIs"
