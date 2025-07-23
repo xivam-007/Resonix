@@ -1,3 +1,5 @@
+//src/app/api/applications/[id]/status/route.ts
+
 import { NextRequest, NextResponse } from 'next/server';
 import dbConnect from '@/lib/mongoose';
 import Application from '@/models/Application';

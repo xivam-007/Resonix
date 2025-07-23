@@ -1,6 +1,7 @@
+import { Job } from "./job";
 export interface Application {
   _id: string;
-  jobId: string;
+  jobId: Job | null;
   resumeUrl: string;
   status: 'applied' | 'selected' | 'rejected';
   student: {

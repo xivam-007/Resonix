@@ -1,3 +1,5 @@
+//src/app/api/jobs/[jobId]/applications/route.ts
+
 import { NextRequest, NextResponse } from 'next/server';
 import connectDB from '@/lib/mongoose';
 import Application from '@/models/Application';

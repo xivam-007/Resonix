@@ -38,9 +38,9 @@ export default function StudentDashboard() {
   if (loading) return <p className="p-4">Loading...</p>;
 
   return (
-    <div className="p-6">
-      <h1 className="text-2xl font-bold mb-4">Your Applications</h1>
-      <div className="space-y-4">
+    <div className="p-6 flex flex-col items-center">
+      <h1 className="mt-20 text-5xl font-classy text-transparent bg-clip-text bg-gradient-to-r from-[#4f3ddb] via-[#8171fd] via-[#a093fe] to-[#F8E9A1] drop-shadow-xl mb-10">Your Applications</h1>
+      <div className="space-y-4 text-white/50">
         {applications.length === 0 && <p>No applications yet.</p>}
         {applications.map((app) => (
           <div
@@ -48,7 +48,9 @@ export default function StudentDashboard() {
             className="border p-4 rounded-lg shadow-sm flex justify-between items-center"
           >
             <div>
-              <h2 className="text-lg font-semibold">{app.jobId.title}</h2>
+              <h2 className="text-lg font-semibold">
+                {app.jobId?.title || "Unknown Job"}
+              </h2>
               <p className="mt-2 text-sm">
                 Resume:{" "}
                 {app.resumePath ? (

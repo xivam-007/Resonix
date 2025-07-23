@@ -57,7 +57,7 @@ export default function ApplyJobPage({ params }: { params: Promise<{ jobId: stri
 
   return (
     <div className="max-w-xl mx-auto py-10 px-4">
-      <h1 className="text-2xl font-bold text-white mb-4">Apply for this Job</h1>
+      <h1 className="mt-20 mb-10 text-5xl font-classy text-transparent bg-clip-text bg-gradient-to-r from-[#4f3ddb] via-[#8171fd] via-[#a093fe] to-[#F8E9A1] drop-shadow-xl">Apply for this Job</h1>
       <form onSubmit={handleApply} className="space-y-4">
         <div>
           <label className="text-white block mb-1">Upload Resume (PDF only)</label>
@@ -65,7 +65,7 @@ export default function ApplyJobPage({ params }: { params: Promise<{ jobId: stri
             type="file"
             accept=".pdf"
             onChange={(e) => setResume(e.target.files?.[0] || null)}
-            className="block w-full"
+            className="w-full bg-white/10 text-white placeholder-white/40 p-3 rounded-xl focus:outline-none hover:underline"
           />
         </div>
         <div>
@@ -73,7 +73,7 @@ export default function ApplyJobPage({ params }: { params: Promise<{ jobId: stri
           <textarea
             value={message}
             onChange={(e) => setMessage(e.target.value)}
-            className="w-full p-2 rounded"
+            className="w-full bg-white/10 text-white placeholder-white/40 p-3 rounded-xl focus:outline-none"
             rows={4}
             placeholder="Anything you want the recruiter to know?"
           />
