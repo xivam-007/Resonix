@@ -33,34 +33,35 @@ export default function JobsPage() {
 
   return (
     <div className="max-w-4xl mx-auto py-8 px-4">
-      <h1 className="text-3xl font-bold mb-6 text-white">Available Jobs</h1>
+      <h1 className="mt-20 text-5xl font-classy text-transparent bg-clip-text bg-gradient-to-r from-[#4f3ddb] via-[#8171fd] to-[#F8E9A1] drop-shadow-xl mb-8">Available Jobs</h1>
       <div className="space-y-6">
         {jobs.length === 0 ? (
           <p className="text-white">No jobs found.</p>
         ) : (
           jobs.map((job) => (
             <div key={job._id} className="bg-white/10 p-4 rounded-lg shadow-md">
-              <h2 className="text-xl font-semibold text-yellow-300">{job.title}</h2>
-              <p className="text-white mt-1">{job.description}</p>
-              <p className="text-white text-sm mt-1 italic">
+              <h2 className="text-xl font-extrabold text-[#aea3fe]">{job.title}</h2>
+              <p className="text-white mt-1 font-bold">🔴 {job.description}</p>
+              <p className="text-white/50 text-sm mt-1 italic">
                 Posted by: {job.recruiterId}
               </p>
 
-              {session ? (
-                <Link
-                  href={`/apply/${job._id}`}
-                  className="mt-3 inline-block px-4 py-2 bg-yellow-400 text-black rounded hover:bg-yellow-500"
-                >
-                  Apply
-                </Link>
-              ) : (
-                <Link
-                  href="/login"
-                  className="mt-3 inline-block text-blue-400 hover:underline"
-                >
-                  Login to Apply
-                </Link>
-              )}
+              {!session ? (
+  <Link
+    href="/login"
+    className="mt-3 inline-block text-blue-400 hover:underline"
+  >
+    Login to Apply
+  </Link>
+) : session.user?.role === "student" ? (
+  <Link
+    href={`/apply/${job._id}`}
+    className="mt-3 inline-block px-4 py-2 bg-yellow-400 text-black rounded hover:bg-yellow-500"
+  >
+    Apply
+  </Link>
+) : null}
+
             </div>
           ))
         )}

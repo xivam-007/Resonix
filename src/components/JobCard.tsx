@@ -31,7 +31,7 @@ const JobCard = ({ job }: { job: Job }) => {
   };
 
   return (
-    <div className="border p-4 rounded shadow">
+    <div className="border border-gray-900 p-4 rounded shadow">
       <h2 className="text-xl font-semibold">{job.title}</h2>
       <p className="mb-2">{job.description}</p>
 
@@ -42,10 +42,10 @@ const JobCard = ({ job }: { job: Job }) => {
       )}
 
       <div className="flex gap-2 mt-3">
-        <button onClick={handleEdit} className="bg-yellow-500 text-white px-3 py-1 rounded">
+        <button onClick={handleEdit} className="hover:underline bg-transparent text-white border border-gray-600 hover:bg-gray-800 px-3 py-1 rounded">
           Edit
         </button>
-        <button onClick={handleDelete} className="bg-red-600 text-white px-3 py-1 rounded">
+        <button onClick={handleDelete} className="bg-[#800000] hover:underline text-white px-3 py-1 rounded">
           Delete
         </button>
       </div>

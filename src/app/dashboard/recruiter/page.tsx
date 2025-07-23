@@ -30,7 +30,7 @@ const RecruiterDashboard = () => {
       if (response.ok && data.jobs) {
         setJobs(data.jobs);
       } else {
-        console.error('Failed to load jobs:', data.error); 
+        console.error('Failed to load jobs:', data.error);
         setJobs([]);
       }
     };
@@ -41,25 +41,25 @@ const RecruiterDashboard = () => {
   return (
     <div className="max-w-4xl mx-auto p-4">
       <div className='flex justify-between items-center mb-6'>
-      <h1 className="text-3xl font-bold mb-4">Your Jobs</h1>
-      <Link href="/recruiter/post-job" passHref>
-              <Button asChild className="hover:underline bg-gray-800 hover:bg-gray-600">
-                <span>Post a Job</span>
-              </Button>
-            </Link>
+        <h1 className="mt-20 text-5xl font-classy text-transparent bg-clip-text bg-gradient-to-r from-[#4f3ddb] via-[#8171fd] via-[#a093fe] to-[#F8E9A1] drop-shadow-xl mb-2">Your Jobs</h1>
+        <Link href="/recruiter/post-job" passHref>
+          <Button asChild className="mt-20 hover:underline bg-gray-800 hover:bg-gray-700">
+            <span>Post a Job</span>
+          </Button>
+        </Link>
       </div>
       {jobs.length === 0 ? (
         <p>No jobs posted yet.</p>
       ) : (
         <div className="grid grid-cols-1 gap-6">
           {jobs.map((job) => (
-            <div key={job._id} className="border rounded-lg shadow-sm p-4">
+            <div key={job._id} className="border border-gray-500 rounded-lg shadow-sm p-4">
               <JobCard job={job} />
               <button
                 onClick={() =>
                   setExpandedJobId((prev) => (prev === job._id ? null : job._id))
                 }
-                className="mt-3 bg-blue-600 text-white px-3 py-1 rounded hover:bg-blue-700 text-sm"
+                className="mt-3 bg-[#333333] text-white px-3 py-1 rounded hover:bg-[#41424c] text-sm"
               >
                 {expandedJobId === job._id ? 'Hide Applicants' : 'View Applicants'}
               </button>

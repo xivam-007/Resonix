@@ -1,11 +1,22 @@
 import Orb from '../components/Orb';
 import { CardBody, CardContainer, CardItem } from "@/components/ui/3d-card";
+import Silk from "@/components/Silk";
 
-
+// bg-black relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-white w-auto sm:w-[30rem] h-auto rounded-xl p-6 border  
 
 export default function Home() {
   return (
+
     <div className="min-h-screen">
+      <div className="absolute inset-0 -z-10">
+        <Silk
+          speed={10}
+          scale={1}
+          color="170123"
+          noiseIntensity={1.5}
+          rotation={0}
+        />
+      </div>
       <main className="min-h-screen w-full justify-center">
         <div className="relative w-full h-[600px] flex items-center justify-center text-center">
           <div className="absolute inset-0 z-0">
@@ -29,7 +40,7 @@ export default function Home() {
 
         <div className='mt-10 flex items-center justify-center'>
           <CardContainer className="inter-var w-100 px-2">
-            <CardBody className="bg-black relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-white w-auto sm:w-[30rem] h-auto rounded-xl p-6 border  ">
+            <CardBody className="group/card  bg-[#0f0117] backdrop-blur-md border border-white/10 rounded-xl p-6 shadow-lg max-w-md mx-auto  ">
               <CardItem
                 translateZ="50"
                 className="text-xl font-bold text-white dark:text-white"
@@ -52,12 +63,12 @@ export default function Home() {
                   alt="thumbnail"
                 />
               </CardItem>
-              
+
             </CardBody>
           </CardContainer>
-           
+
           <CardContainer className="inter-var w-98 px-2">
-            <CardBody className="bg-black relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-white w-auto sm:w-[30rem] h-auto rounded-xl p-6 border  ">
+            <CardBody className="group/card  bg-[#0f0117] backdrop-blur-md border border-white/10 rounded-xl p-6 shadow-lg max-w-md mx-auto  ">
               <CardItem
                 translateZ="50"
                 className="text-xl font-bold text-white dark:text-white"
@@ -80,12 +91,12 @@ export default function Home() {
                   alt="thumbnail"
                 />
               </CardItem>
-              
+
             </CardBody>
           </CardContainer>
 
           <CardContainer className="inter-var w-100 px-2">
-            <CardBody className="bg-black relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-white w-auto sm:w-[30rem] h-auto rounded-xl p-6 border  ">
+            <CardBody className="group/card  bg-[#0f0117] backdrop-blur-md border border-white/10 rounded-xl p-6 shadow-lg max-w-md mx-auto  ">
               <CardItem
                 translateZ="50"
                 className="text-xl font-bold text-white dark:text-white"
@@ -108,9 +119,10 @@ export default function Home() {
                   alt="thumbnail"
                 />
               </CardItem>
-              
+
             </CardBody>
           </CardContainer>
+          
         </div>
 
 

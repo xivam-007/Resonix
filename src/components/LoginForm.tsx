@@ -43,7 +43,7 @@ const LoginForm = ({ onSubmit }: LoginFormProps) => {
         value={formData.email}
         onChange={handleChange}
         required
-        className="w-full p-2 border rounded"
+        className="w-full bg-white/10 text-white placeholder-white/40 p-3 rounded-xl focus:outline-none"
       />
       <input
         type="password"
@@ -52,19 +52,19 @@ const LoginForm = ({ onSubmit }: LoginFormProps) => {
         value={formData.password}
         onChange={handleChange}
         required
-        className="w-full p-2 border rounded"
+        className="w-full bg-white/10 text-white placeholder-white/40 p-3 rounded-xl focus:outline-none"
       />
       <select
         name="role"
         value={formData.role}
         onChange={handleChange}
         required
-        className="w-full p-2 border rounded"
+        className="w-full bg-white/10 text-white placeholder-white/40 p-3 rounded-xl focus:outline-none"
       >
         <option value="student">Student</option>
         <option value="recruiter">Recruiter</option>
       </select>
-      <button type="submit" className="w-full bg-blue-600 text-white p-2 rounded">
+      <button type="submit" className="w-full py-3 bg-white text-black rounded-xl font-semibold transition hover:opacity-90 mb-4">
         Login
       </button>
     </form>

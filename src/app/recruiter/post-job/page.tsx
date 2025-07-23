@@ -47,14 +47,14 @@ export default function PostJobPage() {
 
   return (
     <div className="p-8 max-w-xl mx-auto text-white">
-      <h1 className="text-2xl font-bold mb-6">Post a Job</h1>
-      <form onSubmit={handleSubmit} className="space-y-4 bg-gray-900 p-6 rounded-xl shadow-lg">
+      <h1 className="mt-20 text-5xl font-classy text-transparent bg-clip-text bg-gradient-to-r from-[#4f3ddb] via-[#8171fd] via-[#a093fe] to-[#F8E9A1] drop-shadow-xl mb-2">Post a Job</h1>
+      <form onSubmit={handleSubmit} className="space-y-4 mt-5">
         <input
           type="text"
           placeholder="Job Title"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
-          className="w-full p-2 rounded bg-gray-800 border border-gray-700"
+          className="w-full bg-white/10 text-white placeholder-white/40 p-3 rounded-xl focus:outline-none"
           required
         />
         <textarea
@@ -62,7 +62,7 @@ export default function PostJobPage() {
           value={description}
           onChange={(e) => setDescription(e.target.value)}
           rows={4}
-          className="w-full p-2 rounded bg-gray-800 border border-gray-700"
+          className="w-full bg-white/10 text-white placeholder-white/40 p-3 rounded-xl focus:outline-none"
           required
         />
         <input
@@ -70,13 +70,13 @@ export default function PostJobPage() {
           placeholder="Required Skills (comma-separated)"
           value={skills}
           onChange={(e) => setSkills(e.target.value)}
-          className="w-full p-2 rounded bg-gray-800 border border-gray-700"
+          className="w-full bg-white/10 text-white placeholder-white/40 p-3 rounded-xl focus:outline-none"
           required
         />
         <button
           type="submit"
           disabled={loading}
-          className="w-full bg-blue-600 hover:bg-blue-700 p-2 rounded font-semibold"
+          className="w-full bg-[#281e5d] hover:bg-[#322574] p-2 rounded font-semibold"
         >
 
           {loading ? "Posting..." : "Post Job"}

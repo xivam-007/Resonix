@@ -76,15 +76,15 @@ const EditJobPage = () => {
   };
 
   return (
-    <div className="max-w-2xl mx-auto mt-10">
-      <h2 className="text-2xl font-bold mb-6">Edit Job</h2>
-      <form onSubmit={handleUpdate} className="space-y-4">
+    <div className="p-8 max-w-xl mx-auto text-white">
+      <h2 className="mt-20 text-5xl font-classy text-transparent bg-clip-text bg-gradient-to-r from-[#4f3ddb] via-[#8171fd] via-[#a093fe] to-[#F8E9A1] drop-shadow-xl mb-2">Edit Job</h2>
+      <form onSubmit={handleUpdate} className="space-y-4 mt-5">
         <input
           type="text"
           value={job.title}
           onChange={(e) => setJob({ ...job, title: e.target.value })}
           placeholder="Job Title"
-          className="w-full border p-2 rounded"
+          className="w-full bg-white/10 text-white placeholder-white/40 p-3 rounded-xl focus:outline-none"
           required
         />
 
@@ -92,7 +92,7 @@ const EditJobPage = () => {
           value={job.description}
           onChange={(e) => setJob({ ...job, description: e.target.value })}
           placeholder="Job Description"
-          className="w-full border p-2 rounded"
+          className="w-full bg-white/10 text-white placeholder-white/40 p-3 rounded-xl focus:outline-none"
           rows={5}
           required
         />
@@ -102,14 +102,14 @@ const EditJobPage = () => {
           value={job.requiredSkills}
           onChange={(e) => setJob({ ...job, requiredSkills: e.target.value })}
           placeholder="Skills (comma separated)"
-          className="w-full border p-2 rounded"
+          className="w-full bg-white/10 text-white placeholder-white/40 p-3 rounded-xl focus:outline-none"
           required
         />
 
         <button
           type="submit"
           disabled={loading}
-          className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
+          className="bg-[#281e5d] text-white px-4 py-2 rounded hover:bg-[#322574]"
         >
           {loading ? 'Updating...' : 'Update Job'}
         </button>

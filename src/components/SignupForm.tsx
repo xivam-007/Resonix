@@ -50,11 +50,11 @@ export default function SignupForm({ onSubmit }: SignupFormProps) {
 
   return (
     <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-      <input name="name" type="text" placeholder="Name" onChange={handleChange} required />
-      <input name="email" type="email" placeholder="Email" onChange={handleChange} required />
-      <input name="password" type="password" placeholder="Password" onChange={handleChange} required />
+      <input name="name" type="text" placeholder="Name" onChange={handleChange} required className="w-full bg-white/10 text-white placeholder-white/40 p-3 rounded-xl focus:outline-none"/>
+      <input name="email" type="email" placeholder="Email" onChange={handleChange} required className="w-full bg-white/10 text-white placeholder-white/40 p-3 rounded-xl focus:outline-none"/>
+      <input name="password" type="password" placeholder="Password" onChange={handleChange} required className="w-full bg-white/10 text-white placeholder-white/40 p-3 rounded-xl focus:outline-none"/>
       
-      <select name="role" value={formData.role} onChange={handleChange}>
+      <select name="role" value={formData.role} onChange={handleChange} className="w-full bg-white/10 text-white placeholder-white/40 p-3 rounded-xl focus:outline-none">
         <option value="student">Student</option>
         <option value="recruiter">Recruiter</option>
       </select>
@@ -64,10 +64,10 @@ export default function SignupForm({ onSubmit }: SignupFormProps) {
         type="file"
         accept="image/*"
         onChange={handleFileChange}
-        className="border p-2 rounded"
+        className="w-full bg-white/10 text-white placeholder-white/40 p-3 rounded-xl focus:outline-none"
       />
       
-      <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded">
+      <button type="submit" className="w-full py-3 bg-white text-black rounded-xl font-semibold transition hover:opacity-90 mb-4">
         Sign Up
       </button>
     </form>
